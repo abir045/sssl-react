@@ -33,18 +33,23 @@ export default function HomePage() {
     fetchData();
   }, []);
 
+  // Add this useEffect to force title update
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
+
   if (!homepageData) return <div>Error loading homepage.</div>;
 
   return (
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Homepage"}</title>
-        {seoData?.description && (
-          <meta name="description" content={seoData.description} />
-        )}
-        {/* Add other meta tags based on what formatSeoMeta returns */}
+        <title>{seoData.title || "Homepage"}</title>
       </Helmet>
 
       <RenderBlocksHelper blocks={homepageData} />

@@ -33,6 +33,13 @@ export default function BlogAndArticlesPage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
   if (!blogAndArticlePageData)
     return <div>Error loading blog and articles page.</div>;
@@ -41,11 +48,9 @@ export default function BlogAndArticlesPage() {
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Blog and Articles"}</title>
-        {seoData?.description && (
-          <meta name="description" content={seoData.description} />
-        )}
-        {/* Add other meta tags based on what formatSeoMeta returns */}
+        <title>
+          {seoData?.title || "Blog and Articles - Sentry Security Dashboard"}
+        </title>
       </Helmet>
 
       <RenderBlocksHelper blocks={blogAndArticlePageData} />

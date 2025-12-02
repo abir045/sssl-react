@@ -33,6 +33,13 @@ export default function FaqPage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
   if (!faqPageData) return <div>Error loading FAQ page.</div>;
 
@@ -42,10 +49,7 @@ export default function FaqPage() {
       {/* SEO META */}
       {seoData && (
         <Helmet>
-          <title>{seoData.title || "FAQs - Sentry Security"}</title>
-          {seoData.description && (
-            <meta name="description" content={seoData.description} />
-          )}
+          <title>{seoData.title || "Faqs - Sentry Security Dashboard"}</title>
         </Helmet>
       )}
 

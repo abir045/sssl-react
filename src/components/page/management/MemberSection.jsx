@@ -5,6 +5,7 @@ import { InfoCard } from "../../shared/InfoCard";
 import BodyText from "../../typography/BodyText";
 import Heading from "../../typography/Heading";
 import { getMembersData } from "../../../graphql/components/getMembersData";
+import { Skeleton } from "../../ui/skeleton";
 
 const MemberSection = ({ data }) => {
   const [members, setMembers] = useState(null);
@@ -30,7 +31,7 @@ const MemberSection = ({ data }) => {
     }
   }, [data]);
 
-  if (loading) return <div>Loading members...</div>;
+  if (loading) return <Skeleton />;
   if (!members) return null;
 
   return (

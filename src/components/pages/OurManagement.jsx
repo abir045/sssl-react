@@ -33,6 +33,13 @@ export default function OurManagementPage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
   if (!ourManagementPageData)
     return <div>Error loading our management page.</div>;
@@ -41,10 +48,10 @@ export default function OurManagementPage() {
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Our Management"}</title>
-        {seoData?.description && (
-          <meta name="description" content={seoData.description} />
-        )}
+        <title>
+          {seoData?.title || "Our Management - Sentry Security Dashboard"}
+        </title>
+
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>
 

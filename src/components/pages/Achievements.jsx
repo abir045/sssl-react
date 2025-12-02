@@ -33,6 +33,13 @@ export default function AchievementPage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
   if (!achievementPageData) return <div>Error loading achievements page.</div>;
 
@@ -40,10 +47,10 @@ export default function AchievementPage() {
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Achievements"}</title>
-        {seoData?.description && (
-          <meta name="description" content={seoData.description} />
-        )}
+        <title>
+          {seoData?.title || "Achievements - Sentry Security Dashboard"}
+        </title>
+
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>
 

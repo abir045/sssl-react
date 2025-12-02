@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-// import { Helmet } from "react-helmet";
 import { getPageData } from "../../graphql/getPageData";
 import { formatSeoMeta } from "../../utils/formatSeoMeta";
 import RenderBlocksHelper from "../../utils/RenderBlocksHelper";
 import { Helmet } from "react-helmet-async";
 import { Skeleton } from "../ui/skeleton";
 
-export default function OurServicesPage() {
-  const [ourServicesData, setOurServicesData] = useState(null);
+export default function ContactUsPage() {
+  const [contactUsPageData, setContactUsPageData] = useState(null);
   const [seoData, setSeoData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,16 +15,16 @@ export default function OurServicesPage() {
       try {
         // Fetch both page data and SEO data
         const [pageData, seo] = await Promise.all([
-          getPageData("our-services"),
-          formatSeoMeta("our-services"),
+          getPageData("contact-us"),
+          formatSeoMeta("contact-us"),
         ]);
 
-        setOurServicesData(pageData);
+        setContactUsPageData(pageData);
         setSeoData(seo);
         console.log("Page Data:", pageData);
         console.log("SEO Data:", seo);
       } catch (err) {
-        console.error("Failed to load our services page:", err);
+        console.error("Failed to load contact us page:", err);
       } finally {
         setLoading(false);
       }
@@ -33,28 +32,22 @@ export default function OurServicesPage() {
 
     fetchData();
   }, []);
-  useEffect(() => {
-    if (seoData?.title) {
-      document.title = seoData.title;
-      // console.log("✅ Title manually set to:", seoData.title);
-    }
-  }, [seoData]);
 
   if (loading) return <Skeleton />;
-  if (!ourServicesData) return <div>Error loading our services page.</div>;
+  if (!contactUsPageData) return <div>Error loading contact us page.</div>;
 
   return (
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Our Services"}</title>
+        <title>{seoData?.title || "Contact Us"}</title>
         {seoData?.description && (
           <meta name="description" content={seoData.description} />
         )}
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>
 
-      <RenderBlocksHelper blocks={ourServicesData} />
+      <RenderBlocksHelper blocks={contactUsPageData} />
     </>
   );
 }

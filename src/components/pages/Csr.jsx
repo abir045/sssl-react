@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-// import { Helmet } from "react-helmet";
 import { getPageData } from "../../graphql/getPageData";
 import { formatSeoMeta } from "../../utils/formatSeoMeta";
 import RenderBlocksHelper from "../../utils/RenderBlocksHelper";
 import { Helmet } from "react-helmet-async";
 import { Skeleton } from "../ui/skeleton";
 
-export default function OurServicesPage() {
-  const [ourServicesData, setOurServicesData] = useState(null);
+export default function CSRPage() {
+  const [csrPageData, setCSRPageData] = useState(null);
   const [seoData, setSeoData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,16 +15,16 @@ export default function OurServicesPage() {
       try {
         // Fetch both page data and SEO data
         const [pageData, seo] = await Promise.all([
-          getPageData("our-services"),
-          formatSeoMeta("our-services"),
+          getPageData("csr"),
+          formatSeoMeta("csr"),
         ]);
 
-        setOurServicesData(pageData);
+        setCSRPageData(pageData);
         setSeoData(seo);
         console.log("Page Data:", pageData);
         console.log("SEO Data:", seo);
       } catch (err) {
-        console.error("Failed to load our services page:", err);
+        console.error("Failed to load CSR page:", err);
       } finally {
         setLoading(false);
       }
@@ -33,6 +32,7 @@ export default function OurServicesPage() {
 
     fetchData();
   }, []);
+
   useEffect(() => {
     if (seoData?.title) {
       document.title = seoData.title;
@@ -41,20 +41,20 @@ export default function OurServicesPage() {
   }, [seoData]);
 
   if (loading) return <Skeleton />;
-  if (!ourServicesData) return <div>Error loading our services page.</div>;
+  if (!csrPageData) return <div>Error loading CSR page.</div>;
 
   return (
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Our Services"}</title>
+        <title>{seoData?.title || "CSR"}</title>
         {seoData?.description && (
           <meta name="description" content={seoData.description} />
         )}
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>
 
-      <RenderBlocksHelper blocks={ourServicesData} />
+      <RenderBlocksHelper blocks={csrPageData} />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAchievementData } from "../../../graphql/components/getAchievementData";
 import AchievementCardsSection from "./AchievementCardsSection";
+import { Skeleton } from "../../ui/skeleton";
 
 const AchievementCardsWrapper = ({ data }) => {
   const [achievements, setAchievements] = useState(null);
@@ -28,24 +29,10 @@ const AchievementCardsWrapper = ({ data }) => {
     }
   }, [data]);
 
-  if (loading) return <div>Loading achievements...</div>;
+  if (loading) return <Skeleton />;
   if (!achievements) return null;
 
   return <AchievementCardsSection achievements={achievements} />;
 };
 
 export default AchievementCardsWrapper;
-
-// // import { getAchievementData } from "@/graphql/Components/getAchievementData";
-// import { getAchievementData } from "../../../graphql/components/getAchievementData";
-// import AchievementCardsSection from "./AchievementCardsSection";
-
-// const AchievementCardsWrapper = async ({ data }) => {
-//   const achievementIds = data.data.achievements.map(
-//     (achievement) => achievement.id
-//   );
-//   const achievements = await getAchievementData(achievementIds);
-//   return <AchievementCardsSection achievements={achievements} />;
-// };
-
-// export default AchievementCardsWrapper;

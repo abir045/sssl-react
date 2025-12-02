@@ -33,6 +33,13 @@ export default function NewsAndMediaPage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
   if (!newsAndMediaPageData)
     return <div>Error loading news and media page.</div>;
@@ -42,9 +49,7 @@ export default function NewsAndMediaPage() {
       {/* SEO META */}
       <Helmet>
         <title>{seoData?.title || "News and Media"}</title>
-        {seoData?.description && (
-          <meta name="description" content={seoData.description} />
-        )}
+
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>
 

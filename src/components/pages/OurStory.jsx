@@ -33,6 +33,13 @@ export default function OurStoryPage() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (seoData?.title) {
+      document.title = seoData.title;
+      // console.log("✅ Title manually set to:", seoData.title);
+    }
+  }, [seoData]);
+
   if (loading) return <Skeleton />;
   if (!ourStoryPageData) return <div>Error loading our story page.</div>;
 
@@ -40,10 +47,10 @@ export default function OurStoryPage() {
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "Our Story"}</title>
-        {seoData?.description && (
-          <meta name="description" content={seoData.description} />
-        )}
+        <title>
+          {seoData?.title || "Who We Are - Sentry Security Limited"}
+        </title>
+
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>
 

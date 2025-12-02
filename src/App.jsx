@@ -15,6 +15,9 @@ import BlogAndArticlesPage from "./components/pages/BlogsAndArticles";
 import BlogDetailsPage from "./components/pages/BlogDetails";
 import NewsAndMediaPage from "./components/pages/NewsAndMedia";
 import NewsDetailsPage from "./components/pages/NewsDetails";
+// import { HelmetProvider } from "react-helmet-async";
+import CSRPage from "./components/pages/Csr";
+import ContactUsPage from "./components/pages/ContactUs";
 
 function App() {
   return (
@@ -39,7 +42,16 @@ function App() {
           />
           <Route path="/news-and-media" element={<NewsAndMediaPage />} />
           <Route path="/news-and-media/:slug" element={<NewsDetailsPage />} />
-          <Route path="*" element={<div>404 Not Found</div>} />
+          <Route path="/csr" element={<CSRPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route
+            path="*"
+            element={
+              <div className="h-screen flex items-center justify-center font-bold text-4xl">
+                404 | Not Found
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </>

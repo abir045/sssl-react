@@ -3,6 +3,7 @@ import BlogAndNewsSection from "./BlogAndNewsSection";
 import BodyText from "../../typography/BodyText";
 import Heading from "../../typography/Heading";
 import { getBlogsAndNewsData } from "../../../graphql/Components/getBlogsAndNewsData";
+import { Skeleton } from "../../ui/skeleton";
 
 const BlogsAndNewsWrapper = ({ data }) => {
   const [sectionData, setSectionData] = useState(null);
@@ -43,7 +44,7 @@ const BlogsAndNewsWrapper = ({ data }) => {
     }
   }, [data]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Skeleton />;
   if (!sectionData) return null;
 
   return (

@@ -56,20 +56,20 @@ const Layout = () => {
   return (
     <>
       <ReactLenis root>
-        <HelmetProvider>
-          <GoogleTagManager />
-          <Container>
-            <Navbar data={menuData.navbarData} />
-            <div className="mt-2.5 lg:mt-5 space-y-[50px] lg:space-y-[120px]">
-              <Outlet />
-              <Footer
-                footerData={menuData.footerData}
-                navbarData={menuData.navbarData}
-              />
-            </div>
-          </Container>
-          <Badge />
-        </HelmetProvider>
+        {/* <HelmetProvider> */}
+        <GoogleTagManager />
+        <Container>
+          <Navbar data={menuData.navbarData} />
+          <div className="mt-2.5 lg:mt-5 space-y-[50px] lg:space-y-[120px]">
+            <Outlet />
+            <Footer
+              footerData={menuData.footerData}
+              navbarData={menuData.navbarData}
+            />
+          </div>
+        </Container>
+        <Badge />
+        {/* </HelmetProvider> */}
       </ReactLenis>
     </>
   );
