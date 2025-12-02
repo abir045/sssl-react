@@ -47,7 +47,8 @@ const Footer = ({ footerData, navbarData }) => {
               <React.Fragment key={index}>
                 <li className="flex items-center justify-center gap-4">
                   <Link
-                    href={link?.link}
+                    // href={link?.link}
+                    to={link?.link}
                     className="text-white opacity-80 hover:opacity-100 transition-all hover:underline"
                   >
                     <BodyText tag="span" variant="body-1">
@@ -84,7 +85,11 @@ const Footer = ({ footerData, navbarData }) => {
                     </BodyText>
                   </button>
                 ) : (
-                  <Link href={item?.link} className="text-white w-full">
+                  <Link
+                    // href={item?.link}
+                    to={item?.link}
+                    className="text-white w-full"
+                  >
                     <BodyText
                       tag="span"
                       variant="lead-1"
@@ -118,7 +123,8 @@ const Footer = ({ footerData, navbarData }) => {
                   {item?.children.map((child, idx) => (
                     <Link
                       key={idx}
-                      href={child?.link}
+                      // href={child?.link}
+                      to={child?.link}
                       className="block mb-3 last:mb-0"
                     >
                       <BodyText
@@ -178,7 +184,10 @@ const Footer = ({ footerData, navbarData }) => {
               className="text-white opacity-80 font-normal text-center hover:opacity-100 transition-all duration-200 cursor-pointer"
             >
               Email:{" "}
-              <Link href={`mailto:${footerData?.contact_info?.email}`}>
+              <Link
+                // href={`mailto:${footerData?.contact_info?.email}`}
+                to={`mailto:${footerData?.contact_info?.email}`}
+              >
                 {footerData?.contact_info.email}
               </Link>
             </BodyText>
@@ -190,7 +199,10 @@ const Footer = ({ footerData, navbarData }) => {
               Phone:{" "}
               {footerData?.contact_info.phone_numbers?.map((phone, index) => (
                 <React.Fragment key={index}>
-                  <Link href={`tel:${phone?.replace(/\s+/g, "")}`}>
+                  <Link
+                    // href={`tel:${phone?.replace(/\s+/g, "")}`}
+                    to={`tel:${phone?.replace(/\s+/g, "")}`}
+                  >
                     {phone}
                   </Link>
                   {index < footerData?.contact_info.phone_numbers?.length - 1 &&
@@ -218,7 +230,8 @@ const Footer = ({ footerData, navbarData }) => {
             ([name, url], index) => (
               <Link
                 key={index}
-                href={url}
+                // href={url}
+                to={url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-[38px] w-[38px] flex justify-center items-center opacity-80 hover:opacity-100 transition-all"

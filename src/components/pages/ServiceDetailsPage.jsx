@@ -20,7 +20,7 @@ const ServiceDetailsPage = () => {
       try {
         const data = await getServiceBySlugData(slug);
         setServiceDetailsDataRaw(data);
-        // console.log("Service Details:", data);
+        console.log("Service Details:", serviceDetailsDataRaw);
       } catch (err) {
         console.error("Failed to load service details:", err);
       } finally {
@@ -87,12 +87,12 @@ const ServiceDetailsPage = () => {
   return (
     <>
       {/* SEO META */}
-      <Helmet>
+      {/* <Helmet>
         <title>
           {serviceDetailsDataRaw?.title ||
             "Sentry Security || Services Details"}
         </title>
-      </Helmet>
+      </Helmet> */}
 
       <GlobalBanner data={globalBannerDetails} />
       <DetailsSectionCardsWrapper
