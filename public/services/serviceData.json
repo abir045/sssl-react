@@ -1,0 +1,46 @@
+{
+  "title": "Our Services",
+  "description": "Tailor-made Security, Maintenance, and Operational Service Solutions",
+  "services": [
+    {
+      "name": "Guard",
+      "description": "Our platform provides you with the capabilities to dissect and make sense of your data, transforming it into valuable insights.",
+      "link": "Learn More",
+      "image": "../../src/assets/guard.svg"
+    },
+    {
+      "name": "Cleaner",
+      "description": "Our platform provides you with the capabilities to dissect and make sense of your data, transforming it into valuable insights.",
+      "link": "Learn More",
+      "image": "../../src/assets/cleaner.svg"
+    },
+    {
+      "name": "Driver",
+      "description": "Our platform provides you with the capabilities to dissect and make sense of your data, transforming it into valuable insights.",
+      "link": "Learn More",
+      "image": "../../src/assets/driver.svg"
+    },
+    {
+      "name": "Front Desk Operator",
+      "description": "Our platform provides you with the capabilities to dissect and make sense of your data, transforming it into valuable insights.",
+      "link": "Learn More",
+      "image": "../../src/assets/operator.svg"
+    },
+    {
+      "name": "Laboratory Assistant",
+      "description": "Our platform provides you with the capabilities to dissect and make sense of your data, transforming it into valuable insights.",
+      "link": "Learn More",
+      "image": "../../src/assets/laboratory.svg"
+    },
+    {
+      "name": "Plumber",
+      "description": "Our platform provides you with the capabilities to dissect and make sense of your data, transforming it into valuable insights.",
+      "link": "Learn More",
+      "image": "../../src/assets/plumber.svg"
+    }
+  ],
+  "button": {
+    "text": "Explore Us",
+    "url": "#"
+  }
+}
