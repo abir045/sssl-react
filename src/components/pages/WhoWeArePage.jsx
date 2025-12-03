@@ -40,7 +40,7 @@ export default function WhoWeArePage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!whoWeArePageData) return <div>Error loading who we are page.</div>;
 
   return (

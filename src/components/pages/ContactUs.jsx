@@ -33,7 +33,7 @@ export default function ContactUsPage() {
     fetchData();
   }, []);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!contactUsPageData) return <div>Error loading contact us page.</div>;
 
   return (

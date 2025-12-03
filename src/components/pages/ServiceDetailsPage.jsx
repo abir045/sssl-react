@@ -15,9 +15,9 @@ const ServiceDetailsPage = () => {
   const [serviceDetailsDataRaw, setServiceDetailsDataRaw] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   useEffect(() => {
     async function fetchServiceData() {

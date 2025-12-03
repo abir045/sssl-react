@@ -40,7 +40,7 @@ export default function OurStoryPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!ourStoryPageData) return <div>Error loading our story page.</div>;
 
   return (

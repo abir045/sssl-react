@@ -41,7 +41,7 @@ export default function HomePage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
 
   if (!homepageData) return <div>Error loading homepage.</div>;
 

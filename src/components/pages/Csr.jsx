@@ -40,7 +40,7 @@ export default function CSRPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!csrPageData) return <div>Error loading CSR page.</div>;
 
   return (

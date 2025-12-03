@@ -40,7 +40,7 @@ export default function AchievementPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!achievementPageData) return <div>Error loading achievements page.</div>;
 
   return (

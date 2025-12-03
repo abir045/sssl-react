@@ -40,7 +40,7 @@ export default function BlogAndArticlesPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!blogAndArticlePageData)
     return <div>Error loading blog and articles page.</div>;
 

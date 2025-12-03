@@ -40,7 +40,7 @@ export default function OurManagementPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!ourManagementPageData)
     return <div>Error loading our management page.</div>;
 

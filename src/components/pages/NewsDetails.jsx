@@ -35,7 +35,7 @@ const NewsDetailsPage = () => {
     }
   }, [slug]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!singleBlogOrNewsItemDataRaw)
     return <div>Error loading news details.</div>;
 

@@ -40,7 +40,7 @@ export default function FaqPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!faqPageData) return <div>Error loading FAQ page.</div>;
 
   return (

@@ -40,7 +40,7 @@ export default function NewsAndMediaPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!newsAndMediaPageData)
     return <div>Error loading news and media page.</div>;
 
