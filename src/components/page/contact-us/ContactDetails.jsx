@@ -83,7 +83,12 @@ const ContactDetails = ({ data }) => {
                     : "text-app-dark/80 hover:text-app-dark"
                 } transition-all duration-500 text-nowrap`}
               >
-                <Link href={`tel:${item.link}`}>{item.label}</Link>
+                <Link
+                  // href={`tel:${item.link}`}
+                  to={`tel:${item.link}`}
+                >
+                  {item.label}
+                </Link>
               </BodyText>
             ))}
           </div>
@@ -103,7 +108,10 @@ const ContactDetails = ({ data }) => {
           </BodyText>
         </div>
         <div>
-          <Link href={`mailto:${data.email}`}>
+          <Link
+            // href={`mailto:${data.email}`}
+            to={`mailto:${data.email}`}
+          >
             <BodyText
               tag="span"
               variant="body-2"
