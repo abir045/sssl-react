@@ -1,4 +1,3 @@
-"use client";
 import Heading from "../../typography/Heading";
 import BodyText from "../../typography/BodyText";
 import { Swiper, SwiperSlide } from "swiper/react";
