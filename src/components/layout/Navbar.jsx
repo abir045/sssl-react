@@ -61,7 +61,7 @@ export default function Navbar({ data }) {
   };
 
   // console.log(navbarData.nav_items);
-  console.log(navbarData.logo.primary_logo);
+  // console.log(navbarData.logo.primary_logo);
 
   return (
     <nav
@@ -82,7 +82,11 @@ export default function Navbar({ data }) {
               className="h-[40px] w-[33px] lg:h-[50px] lg:w-[43px] xl:h-[120px] xl:w-[99px] object-cover"
             />
           </Link>
-          <Link href="#" className="flex-shrink-0">
+          <Link
+            // href="#"
+            to="#"
+            className="flex-shrink-0"
+          >
             <img
               src={navbarData.logo.secondary_logo}
               alt="Secondary Logo"
@@ -246,7 +250,8 @@ export default function Navbar({ data }) {
                     {item.children.map((child, idx) => (
                       <Link
                         key={idx}
-                        href={child.link}
+                        // href={child.link}
+                        to={child.link}
                         className="block mb-3 last:mb-0"
                         onClick={closeMobileMenu}
                       >
