@@ -1,10 +1,8 @@
-"use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import Heading from "../../typography/Heading";
 import BodyText from "../../typography/BodyText";
 import MobileAchievementTimeline from "./MobileAchievementTimeline";
-import { getAchievementData } from "../../../graphql/components/getAchievementData";
+import { getAchievementData } from "../../../graphql/Components/getAchievementData";
 // import { getAchievementData } from '@/graphql/Components/getAchievementData';
 
 const AchievementSection = ({ data }) => {
