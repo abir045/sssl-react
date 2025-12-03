@@ -1,6 +1,6 @@
 // import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, ScrollRestoration } from "react-router-dom";
 // import Home from "./components/Home";
 import HomePage from "./components/pages/Home";
 import Layout from "./components/shared/Layout";

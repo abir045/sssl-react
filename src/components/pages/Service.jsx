@@ -40,7 +40,11 @@ export default function OurServicesPage() {
     }
   }, [seoData]);
 
-  if (loading) return <Skeleton />;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!ourServicesData) return <div>Error loading our services page.</div>;
 
   return (

@@ -16,6 +16,10 @@ const ServiceDetailsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     async function fetchServiceData() {
       try {
         const data = await getServiceBySlugData(slug);
@@ -33,7 +37,7 @@ const ServiceDetailsPage = () => {
     }
   }, [slug, serviceDetailsDataRaw]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton className="min-h-screen" />;
   if (!serviceDetailsDataRaw) return <div>Error loading service details.</div>;
 
   // GLOBAL BANNER DATA
