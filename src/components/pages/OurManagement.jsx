@@ -21,8 +21,8 @@ export default function OurManagementPage() {
 
         setOurManagementPageData(pageData);
         setSeoData(seo);
-        console.log("Page Data:", pageData);
-        console.log("SEO Data:", seo);
+        // console.log("Page Data:", pageData);
+        // console.log("SEO Data:", seo);
       } catch (err) {
         console.error("Failed to load our management page:", err);
       } finally {

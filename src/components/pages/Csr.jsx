@@ -21,8 +21,8 @@ export default function CSRPage() {
 
         setCSRPageData(pageData);
         setSeoData(seo);
-        console.log("Page Data:", pageData);
-        console.log("SEO Data:", seo);
+        // console.log("Page Data:", pageData);
+        // console.log("SEO Data:", seo);
       } catch (err) {
         console.error("Failed to load CSR page:", err);
       } finally {

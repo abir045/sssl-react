@@ -21,8 +21,8 @@ export default function AchievementPage() {
 
         setAchievementPageData(pageData);
         setSeoData(seo);
-        console.log("Page Data:", pageData);
-        console.log("SEO Data:", seo);
+        // console.log("Page Data:", pageData);
+        // console.log("SEO Data:", seo);
       } catch (err) {
         console.error("Failed to load achievements page:", err);
       } finally {

@@ -21,8 +21,8 @@ export default function NewsAndMediaPage() {
 
         setNewsAndMediaPageData(pageData);
         setSeoData(seo);
-        console.log("Page Data:", pageData);
-        console.log("SEO Data:", seo);
+        // console.log("Page Data:", pageData);
+        // console.log("SEO Data:", seo);
       } catch (err) {
         console.error("Failed to load news and media page:", err);
       } finally {
@@ -48,7 +48,9 @@ export default function NewsAndMediaPage() {
     <>
       {/* SEO META */}
       <Helmet>
-        <title>{seoData?.title || "News and Media"}</title>
+        <title>
+          {seoData?.title || "News and Media - Sentry Security Dashboard"}
+        </title>
 
         {/* Add other meta tags based on what formatSeoMeta returns */}
       </Helmet>

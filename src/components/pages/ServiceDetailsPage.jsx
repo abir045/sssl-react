@@ -20,7 +20,7 @@ const ServiceDetailsPage = () => {
       try {
         const data = await getServiceBySlugData(slug);
         setServiceDetailsDataRaw(data);
-        console.log("Service Details:", serviceDetailsDataRaw);
+        // console.log("Service Details:", serviceDetailsDataRaw);
       } catch (err) {
         console.error("Failed to load service details:", err);
       } finally {
@@ -31,7 +31,7 @@ const ServiceDetailsPage = () => {
     if (slug) {
       fetchServiceData();
     }
-  }, [slug]);
+  }, [slug, serviceDetailsDataRaw]);
 
   if (loading) return <Skeleton />;
   if (!serviceDetailsDataRaw) return <div>Error loading service details.</div>;

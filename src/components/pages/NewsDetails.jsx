@@ -20,7 +20,7 @@ const NewsDetailsPage = () => {
       try {
         const newsData = await getSingleBlogOrNewsData(slug);
         setSingleBlogOrNewsItemDataRaw(newsData);
-        console.log("News Data:", newsData);
+        // console.log("News Data:", newsData);
       } catch (err) {
         console.error("Failed to load news details:", err);
       } finally {

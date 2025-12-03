@@ -21,8 +21,8 @@ export default function FaqPage() {
 
         setFaqPageData(pageData);
         setSeoData(seo);
-        console.log("FAQ Data:", pageData);
-        console.log("SEO Data:", seo.title);
+        // console.log("FAQ Data:", pageData);
+        // console.log("SEO Data:", seo.title);
       } catch (err) {
         console.error("Failed to load FAQ page:", err);
       } finally {
