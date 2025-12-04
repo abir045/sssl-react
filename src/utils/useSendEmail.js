@@ -5,7 +5,9 @@ const useSendMail = (endpoint) => {
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(null);
   const [error, setError] = useState(null);
-  const domain = import.meta.env.NEXT_PUBLIC_BACKEND_URL;
+  const domain = import.meta.env.VITE_NEXT_PUBLIC_BACKEND_URL;
+
+  // console.log(domain);
 
   const sendMail = async (formData) => {
     setLoading(true);
@@ -14,6 +16,7 @@ const useSendMail = (endpoint) => {
     try {
       const response = await axios.post(
         `${domain}/wp-json/nh/v1/${endpoint}/`,
+
         formData,
         {
           headers: {
@@ -22,6 +25,7 @@ const useSendMail = (endpoint) => {
         }
       );
       setSubmitMessage("Mail sent successfully");
+      console.log(response.data);
       return response.data;
     } catch (err) {
       setError("Error sending mail");
