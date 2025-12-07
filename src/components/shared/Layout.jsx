@@ -23,7 +23,7 @@ const LayoutContent = ({ menuData }) => {
 
   return (
     <>
-      <GoogleTagManager />
+      {/* <GoogleTagManager /> */}
       <Container>
         <Navbar data={menuData.navbarData} />
         <div className="mt-2.5 lg:mt-5 space-y-[50px] lg:space-y-[120px]">
