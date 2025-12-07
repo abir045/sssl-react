@@ -23,7 +23,7 @@ const Footer = ({ footerData, navbarData }) => {
   const navItems = [
     ...navbarData?.nav_items,
     {
-      link: "#",
+      link: "/contact-us",
       label: "Contact Us",
       children: [],
     },
